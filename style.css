@@ -1,0 +1,197 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    margin: auto;
+    width: min(85%, 54rem);
+    background-color: rgb(148, 101, 163);
+    background-image: url(./pics/desk-concept.jpg);
+    background-size: cover;
+}
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    color: rgb(65, 22, 108);
+}
+input {
+    text-align: left;
+    border: transparent;
+}
+input::placeholder {
+    color: rgb(110, 82, 134);
+}
+select {
+    background-color: rgb(223, 183, 240);
+    color:rgb(65, 22, 108);
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 20px 5px 30px rgb(68, 39, 173);
+    width: 50%;
+    margin: 0;
+}
+#delBtn {
+    box-shadow: 10px 3px 20px rgb(68, 39, 173);
+    color: rgb(255, 255, 255);
+    background-color: rgb(132, 95, 168);
+    background-image: url(./pics/bin.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 25px;
+    font-weight: 600;
+    width: 10%;
+    height: 42px;
+    border-radius: 10%;
+    margin-left: 10px;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out;
+}
+#delBtn:hover {
+    background-color: rgb(255, 255, 255);
+    background-image: url(./pics/bin.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgb(76, 35, 101);
+    font-size: 25px;
+    font-weight: 600;
+    height: 42px;
+    width: 10%;
+    transform: scale(1.2);
+}
+.container {
+    background-color: rgb(230, 229, 229, 0.514);
+    box-shadow:
+    0px 0px 0.6px rgba(187, 89, 232, 0.143),
+    0px 0px 1.8px rgba(187, 89, 232, 0.205),
+    0px 0px 4.2px rgba(187, 89, 232, 0.267),
+    0px 0px 14px rgba(187, 89, 232, 0.41);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    padding: 10px;
+}
+.head .mylist {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.head .mylist input {
+   background-color:  rgba(255, 251, 169, 0.5);
+    width: 50%;
+}
+.cl {
+    display: flex;
+    justify-content: space-between;
+}
+.clock,
+.date {
+    color: rgb(52, 12, 100);
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+}
+.head form {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
+}
+.head form input {
+    box-shadow: 10px 3px 20px rgb(68, 39, 173);
+    background-color: rgba(255, 251, 169, 0.5);
+    font-size: 16px;
+    color: rgb(70, 58, 58);
+    padding: 10px;
+    width: 90%;
+}
+.head form button {
+    box-shadow: 10px 3px 20px rgb(68, 39, 173);
+    color: rgb(255, 255, 255);
+    background-color: rgb(93, 35, 99);
+    border-radius: 10%;
+    margin-left: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    height: 42px;
+    width: 10%;
+    transform: scale(1);
+    transition: transform 300ms ease-in-out,
+}
+.head form button:hover {
+    color: rgb(68, 16, 75);
+    background-color: rgb(68, 49, 101);
+    transform: scale(1.2);
+}
+.head ul {
+    list-style: none;
+    color: rgb(52, 46, 46);
+    padding: 0;
+    margin: 5px 0;
+}
+.head ul li {
+    padding: 10px;
+    margin: 5px 0;
+    background-color: rgba(50, 37, 111, 0.5);
+    cursor: pointer;
+    transition: 0.2s;
+}
+ul li:nth-child(even) {
+    background: rgba(107, 42, 248, 0.5);
+}
+ul li:hover {
+    background-color: rgba(66, 31, 99, 0.7);
+}
+.check {
+    width: 0.8em;
+    height: 0.8em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+}
+.check:checked {
+    background-color: #510789;
+}
+.task {
+    font-size: 18px;
+    padding: 0 10px;
+    width: fit-content;
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+.task:focus {
+    outline: none;
+}
+.head ul li i {
+    float: right;
+    cursor: pointer;
+}
+.head ul li i:hover {
+    color: rgb(54, 35, 65);
+}
+.completed {
+    color: rgba(31, 29, 29, 0.8);
+    font-weight: 700;
+    text-decoration: line-through;
+}
+.head {
+    width: 60%;
+}
+
+@media (max-width: 768px) {
+    .head {
+      width: 90%;
+      font-size: 70%;
+    }
+    .clock,
+    .date {
+    color: rgb(13, 2, 31);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    }
+}
