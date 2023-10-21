@@ -1,27 +1,22 @@
-window.onload = loadListPage; 
-
+window.onload = loadListPage;
+  
 // load the list
-function loadListPage()
-{
+function loadListPage() {
   const lists = JSON.parse(localStorage.getItem("lists"));
-
   if (localStorage.getItem("lists") === null) return;
-
   const list = document.querySelector("select"); 
   list.innerHTML = "";
-
   const arrayNameList = [];
-  for (let i = 0; i < lists.length; i++)
-  {  
+  for (let i = 0; i < lists.length; i++) {  
       let val = Object.values(lists[i]);
       let value = Object.values(val);
       listname = value[0];               
-      if(!arrayNameList[listname])
-      { arrayNameList.push(listname); 
-        const option = document.createElement("option"); 
-        option.innerText = listname; 
-        list.insertBefore(option, list.children[0]); 
-    }
+      if(!arrayNameList[listname]) { 
+    arrayNameList.push(listname); 
+    const option = document.createElement("option"); 
+    option.innerText = listname; 
+    list.insertBefore(option, list.children[0]); 
+      }
   }
 }
 
@@ -55,7 +50,7 @@ function loadList(listname)
     li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${task.completed ? "checked" : ""}>
      <input type="text" value="${task.task}"
      class="task ${task.completed ? "completed" : ""}" onfocus="getCurrentTask(this)" onblur="editTask(this)">
-     <i onclick="removeTask(this)"></i>`;
+     <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
     list.insertBefore(li, list.children[0]);
   });
 }
@@ -89,12 +84,21 @@ function addList()
 const tasks = JSON.parse(localStorage.getItem("tasks"));
 const lists = JSON.parse(localStorage.getItem("lists"));
 
-function loadTasks()
-{
+function loadTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks"));
-  if (localStorage.getItem("tasks") === null) return;
-
-  // TODO: load tasks after clicking on lists
+  if (localStorage.getItem("tasks") === null) return;  
+  tasks.forEach((task) => {
+    const list = document.querySelector("ul");
+    const li = document.createElement("li");
+    li.innerHTML = `<input type="checkbox" onclick="taskComplete(this)" class="check" ${
+      task.completed ? "checked" : ""
+    }>
+     <input type="text" value="${task.task}" class="task ${
+      task.completed ? "completed" : ""
+    }" onfocus="getCurrentTask(this)" onblur="editTask(this)">
+     <i class="fa fa-trash" onclick="removeTask(this)"></i>`;
+    list.insertBefore(li, list.children[0]);
+  });
 }
 
 function addTask()
@@ -141,8 +145,17 @@ function taskComplete(event)
 // remove task
 function removeTask(event) {
   const tasks = Array.from(JSON.parse(localStorage.getItem("tasks")));
-
-  // TODO: remove tasks from the list
+  tasks.forEach((task) => {
+    if (task.task === event.parentNode.children[1].value) {
+      tasks.splice(tasks.indexOf(task), 1); 
+    }
+  });
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  event.parentElement.remove();
+}
+let currentTask = null; 
+function getCurrentTask(event) {  
+  currentTask = event.value;
 }
 
 // edit task
@@ -191,8 +204,3 @@ function editTask(event) {
   }
   setInterval(updateDat, 1000);
 })();
-
-delBtn.addEventListener("click", (e) => {
-  let opt = document.querySelector("option");
-  opt.remove(opt.selectedIndex);
-});

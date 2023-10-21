@@ -1,21 +1,17 @@
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    color: white;
-    text-align: center;
-    margin: auto;
-    width: min(85%, 54rem);
-    background-color: rgb(148, 101, 163);
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #9465a3;
     background-image: url(./pics/desk-concept.jpg);
     background-size: cover;
+    color: #fff;
 }
-h1 {
-    font-family: "Times New Roman", Times, serif;
-    font-style: italic;
-    color: rgb(65, 22, 108);
-}
+
 input {
     text-align: left;
     border: transparent;
@@ -23,109 +19,107 @@ input {
 input::placeholder {
     color: rgb(110, 82, 134);
 }
-select {
-    background-color: rgb(223, 183, 240);
-    color:rgb(65, 22, 108);
-    font-size: 20px;
-    font-weight: 700;
-    box-shadow: 20px 5px 30px rgb(68, 39, 173);
-    width: 50%;
-    margin: 0;
-}
-#delBtn {
-    box-shadow: 10px 3px 20px rgb(68, 39, 173);
-    color: rgb(255, 255, 255);
-    background-color: rgb(132, 95, 168);
-    background-image: url(./pics/bin.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    font-size: 25px;
-    font-weight: 600;
-    width: 10%;
-    height: 42px;
-    border-radius: 10%;
-    margin-left: 10px;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out;
-}
-#delBtn:hover {
-    background-color: rgb(255, 255, 255);
-    background-image: url(./pics/bin.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    color: rgb(76, 35, 101);
-    font-size: 25px;
-    font-weight: 600;
-    height: 42px;
-    width: 10%;
-    transform: scale(1.2);
-}
+
 .container {
-    background-color: rgb(230, 229, 229, 0.514);
-    box-shadow:
-    0px 0px 0.6px rgba(187, 89, 232, 0.143),
-    0px 0px 1.8px rgba(187, 89, 232, 0.205),
-    0px 0px 4.2px rgba(187, 89, 232, 0.267),
-    0px 0px 14px rgba(187, 89, 232, 0.41);
+    background-color: rgba(230, 229, 229, 0.85);
+    box-shadow: 0 0 10px rgba(187, 89, 232, 0.8);
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    padding: 10px;
+    margin-top: 50px;
+    padding: 20px;
+    width: 50%;
 }
+
+h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    color: #41166c;
+    margin-bottom: 20px;
+}
+
+.head {
+    width: 100%;
+}
+
+.head form {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+}
+
 .head .mylist {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
 }
+
 .head .mylist input {
-   background-color:  rgba(224, 177, 225, 0.5);
+    background-color:  rgba(224, 177, 225, 0.5);
     width: 50%;
-}
-.cl {
-    display: flex;
-    justify-content: space-between;
-}
-.clock,
-.date {
-    color: rgb(52, 12, 100);
-    font-size: 25px;
-    font-weight: 600;
-    margin: auto;
-    padding: 10px;
-}
-.head form {
-    display: flex;
-    width: 100%;
-    background-color: transparent;
-}
+    border: none;
+    border-radius: 5px;
+ }
+
 .head form input {
-    box-shadow: 10px 3px 20px rgb(68, 39, 173);
-    background-color: rgba(255, 251, 169, 0.5);
+    flex: 1;
+    background-color: rgba(255, 251, 169, 0.8);
     font-size: 16px;
-    color: rgb(70, 58, 58);
+    color: #463a3a;
+    box-shadow:
+    0px 0px 0.6px rgba(187, 89, 232, 0.143),
+    0px 0px 1.8px rgba(187, 89, 232, 0.205),
+    0px 0px 4.2px rgba(187, 89, 232, 0.267),
+    0px 0px 14px rgba(187, 89, 232, 0.41);
     padding: 10px;
-    width: 90%;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
 }
+
 .head form button {
-    box-shadow: 10px 3px 20px rgb(68, 39, 173);
-    color: rgb(255, 255, 255);
-    background-color: rgb(93, 35, 99);
+    background-color: #5d2363;
+    color: #fff;
+    font-size: 20px;
+    border: none;
     border-radius: 10%;
-    margin-left: 10px;
-    font-size: 25px;
-    font-weight: 600;
-    height: 42px;
-    width: 10%;
-    transform: scale(1);
-    transition: transform 300ms ease-in-out,
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
 .head form button:hover {
-    color: rgb(68, 16, 75);
-    background-color: rgb(68, 49, 101);
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
+
+select {
+    background-color: rgb(223, 183, 240);
+    color: #463a3a;
+    box-shadow:
+    0px 0px 0.6px rgba(187, 89, 232, 0.143),
+    0px 0px 1.8px rgba(187, 89, 232, 0.205),
+    0px 0px 4.2px rgba(187, 89, 232, 0.267),
+    0px 0px 14px rgba(187, 89, 232, 0.41);
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    width: 100%;
+}
+
 .head ul {
     list-style: none;
     color: rgb(52, 46, 46);
@@ -139,34 +133,14 @@ select {
     cursor: pointer;
     transition: 0.2s;
 }
+
 ul li:nth-child(even) {
-    background: rgba(107, 42, 248, 0.5);
+    background: rgba(107, 43, 117, 0.5);
 }
 ul li:hover {
-    background-color: rgba(66, 31, 99, 0.7);
+    background-color: rgba(106, 49, 112, 0.7);
 }
-.check {
-    width: 0.8em;
-    height: 0.8em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(255, 255, 255);
-}
-.check:checked {
-    background-color: #510789;
-}
-.task {
-    font-size: 18px;
-    padding: 0 10px;
-    width: fit-content;
-    background: transparent;
-    border: none;
-    color: rgb(255, 255, 255);
-}
-.task:focus {
-    outline: none;
-}
+
 .head ul li i {
     float: right;
     cursor: pointer;
@@ -179,20 +153,47 @@ ul li:hover {
     font-weight: 700;
     text-decoration: line-through;
 }
-.head {
-    width: 60%;
+
+.completed {
+    color: rgba(31, 29, 29, 0.8);
+    font-weight: 700;
+    text-decoration: line-through;
+}
+
+.task {
+    font-size: 18px;
+    padding: 0 10px;
+    width: fit-content;
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+}
+.task:focus {
+    outline: none;
+}
+
+.clock, .date {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 80%;
+    background-color: rgba(95, 36, 91, 0.5);
+    border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-    .head {
-      width: 90%;
-      font-size: 70%;
+    .clock, .date {
+        font-size: 18px;
     }
-    .clock,
-    .date {
-    color: rgb(13, 2, 31);
-    font-size: 18px;
-    font-weight: 500;
-    padding: 10px;
+    .head .mylist input, .head form input {
+        font-size: 14px;
+        padding: 8px;
+    }
+    ul li {
+        padding: 10px;
+    }
+    .head form button {
+        font-size: 16px;
     }
 }
